@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUSTED WORLD - Shop Collection</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/collections.css">
+</head>
+<body>
+  <header class="sticky-top bg-black border-bottom border-secondary py-3">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <h1 class="h4 fw-bold mb-0">BUSTED WORLD</h1>
+
+      <nav class="nav">
+        <a class="nav-link text-light text-uppercase mx-2" href="index.html#home">Home</a>
+        <a class="nav-link text-light text-uppercase mx-2" href="index.html#about">About</a>
+        <a class="nav-link text-light text-uppercase mx-2" href="index.html#contact">Contact</a>
+      </nav>
+      <div>
+          <a href="index.html#shop" class="text-light fs-5 me-3" title="Back to Shop">🛒</a>
+          <a href="Account.html" class="text-light fs-5" title="Account">👤</a>
+        </div>
+      
+    </div>
+  </header>
+
+  <section id="shop">
+    <h2 class="display-5 fw-semibold text-uppercase">Explore Our Accessories</h2>
+
+    <button class="nav-btn left" onclick="scrollShop(-1)">&#10094;</button>
+    <button class="nav-btn right" onclick="scrollShop(1)">&#10095;</button>
+
+    <div class="shop-container" id="shopContainer">
+
+      <div class="card shop-card">
+        <div class="category-image" style="background-image:url('busted.png');"></div>
+        <div class="card-body">
+          <h3 class="h5 text-uppercase mb-2"> BUSTED WORLD - Ring Collection </h3>
+          <p class="text-secondary mb-3">Rp 75.000</p>
+          <a href="#" class="btn btn-light btn-sm text-uppercase">View Details</a>
+        </div>
+      </div>
+
+      <div class="card shop-card">
+        <div class="category-image" style="background-image:url('busted.png');"></div>
+        <div class="card-body">
+          <h3 class="h5 text-uppercase mb-2">BUSTED WORLD - Necklace Collection</h3>
+          <p class="text-secondary mb-3">Rp 120.000</p>
+          <a href="#" class="btn btn-light btn-sm text-uppercase">View Details</a>
+        </div>
+      </div>
+
+      <div class="card shop-card">
+        <div class="category-image" style="background-image:url('busted.png');"></div>
+        <div class="card-body">
+          <h3 class="h5 text-uppercase mb-2">BUSTED WORLD - Keychain BUSTED WORLD </h3>
+          <p class="text-secondary mb-3">Rp 45.000</p>
+          <a href="#" class="btn btn-light btn-sm text-uppercase">View Details</a>
+        </div>
+      </div>
+
+      <div class="card shop-card">
+        <div class="category-image" style="background-image:url('busted.png');"></div>
+        <div class="card-body">
+          <h3 class="h5 text-uppercase mb-2">BUSTED WORLD - Tumbler BUSTED WORLD</h3>
+          <p class="text-secondary mb-3">Rp 349.000</p>
+          <a href="#" class="btn btn-light btn-sm text-uppercase">View Details</a>
+        </div>
+      </div>
+
+      <div class="card shop-card">
+        <div class="category-image" style="background-image:url('busted.png');"></div>
+        <div class="card-body">
+          <h3 class="h5 text-uppercase mb-2">BUSTED WORLD - Sticker NO ONE</h3>
+          <p class="text-secondary mb-3">Rp 49.000</p>
+          <a href="#" class="btn btn-light btn-sm text-uppercase">View Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="bg-black border-top border-secondary py-1 text-center text-secondary small">
+    <footer class="footer bg-black text-white pt-5 pb-3 mt-auto border-top border-secondary">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Information -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-semibold mb-3 text-uppercase">Information</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html#about" class="text-secondary text-decoration-none">About Us</a></li>
+          <li><a href="index.html#contact" class="text-secondary text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Metode Pembayaran -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-semibold mb-3 text-uppercase">Metode Pembayaran</h5>
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
+          <img src="img/payment/qris.jpeg" alt="QRIS" class="payment-icon">
+          <img src="img/payment/ovo.jpeg" alt="OVO" class="payment-icon">
+          <img src="img/payment/mandiri.jpeg" alt="Mandiri" class="payment-icon">
+          <img src="img/payment/bri.jpeg" alt="BRI" class="payment-icon">
+          <img src="img/payment/bni.jpeg" alt="BNI" class="payment-icon">
+        </div>
+      </div>
+
+      <!-- Metode Pengiriman -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-semibold mb-3 text-uppercase">Metode Pengiriman</h5>
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
+          <img src="img/shipping/jne.jpeg" alt="JNE" class="payment-icon">
+          <img src="img/shipping/dhl.jpeg" alt="DHL" class="payment-icon">
+          <img src="img/shipping/jnt.jpeg" alt="J&T" class="payment-icon">
+        </div>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col-md-2 mb-4 text-center text-md-start">
+        <h5 class="fw-semibold mb-3 text-uppercase">Follow Us</h5>
+        <a href="https://www.instagram.com/busted.w" target="_blank" class="text-white">
+          <p> @busted.w <p/>
+        </a>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small text-secondary">
+      &copy; 2025 BUSTED WORLD. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  </footer>
+
+  <script>
+    function scrollShop(direction) {
+  const container = document.getElementById('shopContainer');
+  const card = container.querySelector('.shop-card');
+  const gap = 16; 
+  const scrollAmount = card.offsetWidth + gap; 
+  
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+  </script>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
