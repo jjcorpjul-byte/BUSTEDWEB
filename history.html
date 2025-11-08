@@ -3,30 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BUSTED WORLD - Essential Wear</title>
+  <title>BUSTED WORLD - Purchase History</title>
 
-  
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
   <link rel="stylesheet" href="css/style.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-dark text-light">
-
-  
   <header class="sticky-top bg-black border-bottom border-secondary py-3">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
       <h1 class="h4 fw-bold mb-0">BUSTED WORLD</h1>
 
       <nav class="nav">
         <a class="nav-link text-light text-uppercase mx-2" href="index.html">Home</a>
-        <a class="nav-link text-light text-uppercase mx-2" href="index.html">Shop</a>
-        <a class="nav-link text-light text-uppercase mx-2" href="#contact">Contact</a>
+        <a class="nav-link text-light text-uppercase mx-2" href="index.html#shop">Shop</a>
+        <a class="nav-link text-light text-uppercase mx-2" href="index.html#contact">Contact</a>
         <a class="nav-link text-light text-uppercase mx-2" href="history.html">History</a>
       </nav>
 
-    <div>
+      <div>
         <a href="cart.html" class="text-light fs-5 me-3 position-relative">
           🛒
           <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -34,15 +29,32 @@
           </span>
         </a>
         <a href="#" class="text-light fs-5">👤</a>
-    </div>
-
+      </div>
     </div>
   </header>
+  <section id="history" class="py-5 text-center">
+    <div class="container">
+      <h2 class="display-5 fw-semibold text-uppercase mb-5">Purchase History</h2>
 
- 
-  <!-- Isi disini ya jul -->
-
-  <!-- batasnya yaa jangan lupa pake js-->
+      <div class="table-responsive">
+        <table class="table table-dark table-striped table-bordered align-middle">
+          <thead class="table-secondary text-dark">
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Produk</th>
+              <th>Jumlah</th>
+              <th>Total Harga</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="history-table">
+          </tbody>
+        </table>
+      </div>
+      <button id="clearHistory" class="btn btn-outline-light mt-4">Hapus Semua Riwayat</button>
+    </div>
+  </section>
 
   <footer class="bg-black border-top border-secondary py-3 text-center text-secondary">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
@@ -55,6 +67,41 @@
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    const historyTable = document.getElementById("history-table");
+    const clearBtn = document.getElementById("clearHistory");
+    const historyData = JSON.parse(localStorage.getItem("history")) || [];
+    if (historyData.length === 0) {
+      historyTable.innerHTML = `
+        <tr>
+          <td colspan="6" class="text-center text-secondary">Belum ada riwayat pembelian.</td>
+        </tr>
+      `;
+    } else {
+      historyData.forEach((item, index) => {
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${item.tanggal}</td>
+            <td>${item.produk}</td>
+            <td>${item.jumlah}</td>
+            <td>${item.total}</td>
+            <td><span class="badge bg-${item.status === "Selesai" ? "success" : "warning"}">${item.status}</span></td>
+          </tr>
+        `;
+        historyTable.insertAdjacentHTML("beforeend", row);
+      });
+    }
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Hapus semua riwayat pembelian?")) {
+        localStorage.removeItem("history");
+        historyTable.innerHTML = `
+          <tr>
+            <td colspan="6" class="text-center text-secondary">Belum ada riwayat pembelian.</td>
+          </tr>
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
