@@ -38,4 +38,37 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   renderCart();
+ 
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+      const history = JSON.parse(localStorage.getItem("history")) || [];
+      const tanggal = new Date().toLocaleDateString("id-ID", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+
+      cart.forEach(item => {
+        history.push({
+          tanggal: tanggal,
+          produk: item.name,
+          jumlah: item.quantity,
+          total: `Rp ${(item.price * item.quantity).toLocaleString("id-ID")}`,
+          status: "Diproses"
+        });
+      });
+      localStorage.setItem("history", JSON.stringify(history));
+      localStorage.removeItem("cart");
+
+      alert("Checkout berhasil! Pesananmu telah masuk ke history.");
+      window.location.href = "history.html";
+    });
+  }
+
 });
